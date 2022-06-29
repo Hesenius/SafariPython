@@ -29,6 +29,9 @@ def many_args(a = 99, b = 10, *args, **kwargs):
     print(args)
     for v in args:
         print(f"> {v}")
+    print(type(kwargs))
+    for k, v in kwargs.items():
+        print(f"key {k} has value {v}")
 
 many_args(1, 2)
 many_args(1)
@@ -40,3 +43,35 @@ def day_of_week(day, month, year):
 day_of_week(month=12, day=11, year=2022)
 
 many_args(1, 2, 9, 8, 7, 6)
+
+names = ["Fred", "Jim"]
+def add_sheila(l : list):
+    l.append("Sheila")
+
+print(names)
+add_sheila(names)
+print(names)
+
+def add_one(x: int):
+    x = x + 1
+
+x = 0
+print(x)
+add_one(x)
+print(x)
+
+many_args(1, 2, 3, 4, 5, fruit="banana", capacity=10)
+
+num_list = [9, 8, 7]
+kw_stuff = {"fruit": "pampelmouse", "capacity": 50}
+many_args(9, 8, *num_list, **kw_stuff)
+
+def two_args(a, b):
+    pass
+two_args(1, 2)
+print("success")
+# fails must have correct number of args
+# can use default values, varargs, or kwargs...
+# no method overloading
+# two_args(1)
+# print("success")
